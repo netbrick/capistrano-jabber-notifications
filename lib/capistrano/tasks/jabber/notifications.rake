@@ -43,11 +43,11 @@ module Capistrano
         def send_jabber_message(action, completed = false)
           msg = []
           msg << "#{completed ? 'Completed' : 'Started'} #{action} on #{options[:stage]} by #{username}"
-          msg << "Time #{Time.now.to_s}"
-          msg << "Application #{options[:application]}"
-          msg << "Branch #{options[:branch]}"
-          msg << "Revision #{options[:real_revision]}"
-          msg << "Release name #{options[:release_name]}"
+          msg << "Time: #{Time.now.to_s}"
+          msg << "Application: #{options[:application]}"
+          msg << "Branch: #{options[:branch]}"
+          # msg << "Revision #{options[:real_revision]}"
+          # msg << "Release name #{options[:release_name]}"
           # msg << git_log_revisions if options[:source].to_sym == :git
           msg = msg.join("\r\n")
 
